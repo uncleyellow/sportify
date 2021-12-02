@@ -1,0 +1,1412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify-Trình phát nhạc trên web</title>
+    <!--Link css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"><!--Reset css-->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/font/fontawesome-free-5.15.4-web/fontawesome-free-5.15.4-web/css/all.min.css">
+</head>
+<body>
+   <div class="header">
+       <div class="header-sidebar">
+           <ul class="header-sidebar-backgrd">
+               <li class="header-sidebar-item-home">
+                   <a href="/" class="header-sidebar-item-link">
+                       <div class="header-sidebar-item-icon-home">
+                            <i class="fab fa-spotify"></i>
+                       </div>
+                       <div class="header-sidebar-item-option-home">
+                            Spotify
+                       </div>
+                   </a>
+               </li>
+               <li class="header-sidebar-item header-sidebar-item-active">
+                <div class="header-sidebar-item-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <div class="header-sidebar-item-option">
+                     Trang chủ
+                </div>
+            </li>
+            <li class="header-sidebar-item">
+                <div class="header-sidebar-item-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="header-sidebar-item-option">
+                     Tìm kiếm
+                </div>
+            </li>
+            <li class="header-sidebar-item">
+                <div class="header-sidebar-item-icon">
+                    <i class="far fa-bookmark"></i>
+                </div>
+                <div class="header-sidebar-item-option">
+                     Thư viện
+                </div>
+            </li>
+            <li class="header-sidebar-item header-sidebar-item-option-playlist">
+                <div class="header-sidebar-item-icon">
+                    <i class="fas fa-plus-square"></i>
+                </div>
+                <div class="header-sidebar-item-option">
+                     Tạo playlist
+                </div>
+            </li>
+            <li class="header-sidebar-item header-sidebar-item-option-playlist">
+                <div class="header-sidebar-item-icon">
+                    <i class="fab fa-gratipay"></i>
+                </div>
+                <div class="header-sidebar-item-option">
+                     Bài hát đã thích
+                </div>
+            </li>
+            <li class="header-sidebar-item header-sidebar-item-option-download">
+                <div class="header-sidebar-item-icon">
+                    <i class="far fa-arrow-alt-circle-down"></i>
+                </div>
+                <div class="header-sidebar-item-option">
+                     Cài đặt ứng dụng
+                </div>
+            </li>
+           </ul>
+       </div>
+       <div class="header-navbar">
+           <div class="header-navbar-btn">
+               <button class="header-navbar-btn-page btn">
+                <i class="fas fa-angle-left"></i>
+               </button>
+               <button class="header-navbar-btn-page btn header-navbar-btn-page-disable">
+                <i class="fas fa-angle-right"></i>
+               </button>
+           </div>
+           <div class="header-navbar-user">
+               <button class="header-navbar-user-upgrade btn">
+                   NÂNG CẤP
+               </button>
+               <div class="header-navbar-user-setting">
+                   <div class="header-navbar-user-setting-wrap">
+
+                   </div>
+                   <div class="header-navbar-user-setting-img">
+                       <img class="header-navbar-user-setting-avatar" src="/img/avatar.jpg" alt="avatar">
+                   </div>
+                   <div class="header-navbar-user-name">
+                       Dương Khánh
+                   </div>
+                   <i class="header-navbar-user-icon fas fa-sort-down">
+                       <ul class="header-navbar-user-menu">
+                           <li class="header-navbar-user-item">
+                               <a href="" class="header-navbar-user-link">
+                                   <div class="header-navbar-user-link-name">
+                                       Tài khoản
+                                    </div>
+                                   <i class="header-navbar-user-item-icon fas fa-external-link-alt"></i>
+                               </a>
+                           </li>
+                           <li class="header-navbar-user-item">
+                            <a href="" class="header-navbar-user-link">
+                                Hồ sơ
+                            </a>
+                        </li>
+                        <li class="header-navbar-user-item">
+                            <a href="" class="header-navbar-user-link">
+                                <div class="header-navbar-user-link-name">
+                                    Nâng cấp lên premium
+                                </div>
+                                <i class="header-navbar-user-item-icon fas fa-external-link-alt"></i>
+                            </a>
+                        </li>
+                        <li class="header-navbar-user-item">
+                            <a href="" class="header-navbar-user-link">
+                                Đăng xuất
+                            </a>
+                        </li>
+                       </ul>
+                   </i>
+               </div>
+           </div>
+       </div>
+   </div>
+   <div class="container">
+    <div class="container-headding">
+        <h1 class="container-headding-day">
+            Chào buổi tối
+        </h1>
+        <div class="container-playlist">
+            <a href="#" class="container-playlist-theme">
+                <img class="container-playlist-theme-img" src="/img/Playlist/like.jpg" alt="">
+                <div class="container-playlist-theme-description">
+                    Bài hát đã thích
+                </div>
+                <i class="container-playlist-theme-icon fas fa-play-circle"></i>
+            </a>
+            <a href="#" class="container-playlist-theme">
+                <img class="container-playlist-theme-img" src="/img/Playlist/like.jpg" alt="">
+                <div class="container-playlist-theme-description">
+                    Bài hát đã thích
+                </div>
+                <i class="container-playlist-theme-icon fas fa-play-circle"></i>
+            </a>
+            <a href="#" class="container-playlist-theme">
+                <img class="container-playlist-theme-img" src="/img/Playlist/like.jpg" alt="">
+                <div class="container-playlist-theme-description">
+                    Bài hát đã thích
+                </div>
+                <i class="container-playlist-theme-icon fas fa-play-circle"></i>
+            </a>
+        </div>
+        <div class="container-playlist">
+            <a href="#" class="container-playlist-theme">
+                <img class="container-playlist-theme-img" src="/img/Playlist/like.jpg" alt="">
+                <div class="container-playlist-theme-description">
+                    Bài hát đã thích
+                </div>
+                <i class="container-playlist-theme-icon fas fa-play-circle"></i>
+            </a>
+            <a href="#" class="container-playlist-theme">
+                <img class="container-playlist-theme-img" src="/img/Playlist/like.jpg" alt="">
+                <div class="container-playlist-theme-description">
+                    Bài hát đã thích
+                </div>
+                <i class="container-playlist-theme-icon fas fa-play-circle"></i>
+            </a>
+            <a href="#" class="container-playlist-theme">
+                <img class="container-playlist-theme-img" src="/img/Playlist/like.jpg" alt="">
+                <div class="container-playlist-theme-description">
+                    Bài hát đã thích
+                </div>
+                <i class="container-playlist-theme-icon fas fa-play-circle"></i>
+            </a>
+        </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <a href="" class="container-headding-link">
+                Chương trình của bạn
+            </a>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <div class="container-channel-headder">
+                <a href="" class="container-headding-link">
+                    Nghệ sỹ được đề xuất
+                </a>
+                <h5 class="container-channel-headder-description">
+                    Lấy cảm hứng từ hoạt động gần đây của bạn
+                </h5>
+            </div>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+    <div class="container-channel">
+        <div class="container-headding-name">
+            <div class="container-channel-headder">
+                <a href="" class="container-headding-link">
+                    Nghệ sỹ được đề xuất
+                </a>
+                <h5 class="container-channel-headder-description">
+                    Lấy cảm hứng từ hoạt động gần đây của bạn
+                </h5>
+            </div>
+            <a href="" class="container-headding-link container-headding-link--show-all">
+                Xem tất cả
+            </a>
+        </div>
+        <div class="container-channel-menu">
+           <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+            <a href="#" class="container-channel-menu-play">
+                <img class="container-channel-menu-play-img" src="/img/Playlist/like.jpg" alt="Playlist">
+                <div class="container-channel-menu-play-content">
+                    <h5 class="container-channel-menu-play-content-description">
+                        Khánh Rapper
+                    </h5>
+                    <h6 class="container-channel-menu-play-player">
+                        Rapper VN
+                    </h6>
+                </div>
+            </a>
+           </div>
+    </div>
+   </div>
+   <div class="footer">
+    
+   </div>
+</body>
+</html>

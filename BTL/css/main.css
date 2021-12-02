@@ -1,0 +1,316 @@
+.header{
+    width: 100%;
+    height: 60px;
+    background-color:var(--header-color);
+    position: fixed;
+    display: flex;
+    z-index: 1;
+}
+/*Begin Sidebar*/
+.header-sidebar{
+    height: 520px;
+    width: 240px;
+    background-color:var(--sidebar-color);
+}
+.header-sidebar-backgrd{
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+}
+.header-sidebar-item-home{
+    height: 90px;
+    position: relative;
+    left: 12px;
+    top: 15px;
+}
+.header-sidebar-item-link{
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: inherit;
+    text-decoration: none;
+}
+.header-sidebar-item-icon-home{
+    font-size: 3rem;
+}
+.header-sidebar-item:hover{
+    background-color: #282828;
+}
+.header-sidebar-item-option-home{
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+.header-sidebar-item{
+    color: var(--text-color);
+    height: 42px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.header-sidebar-item-icon{
+    position: relative;
+    font-size: 1.4rem;
+    top: 10px;
+    left: 18px;
+}
+.header-sidebar-item-option{
+    width: 180px;
+    position: relative;
+    top: 12px;
+    font-size: 1.2rem;
+}
+.header-sidebar-item-option-playlist{
+    position: relative;
+    top: 22px;
+}
+.header-sidebar-item-option-download{
+    position: relative;
+    top: 180px;
+}
+.header-sidebar-item-active{
+    background-color: #282828;
+}
+/*End Sidebar*/
+/*Begin Navbar*/
+.header-navbar{
+    display: flex;
+    width: 1200px;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-navbar-btn{
+    position: relative;
+    left: 50px;
+}
+.header-navbar-btn-page{
+    width: 34px;
+}
+.header-navbar-btn-page-disable{
+    color: transparent;
+    position: relative;
+    left: 12px;
+}
+/*Begin user*/
+.header-navbar-user{
+    display: flex;
+    align-items: center;
+    position: relative;
+    right: 22px;
+}
+.header-navbar-user-upgrade{
+    width: 164px;
+    font-weight: 900;
+    position: relative;
+    right: 15px;
+}
+.header-navbar-user-setting{
+    display: flex;
+    min-width: 160px;
+    height: 35px;
+    width: 34px;
+    border-radius: 16px;
+    background: black;
+}
+.header-navbar-user-setting-wrap{
+    background-color: transparent;
+    width: 160px;
+    position: absolute;
+    height: 22px;
+    top: 26px;
+}
+.header-navbar-user-setting-avatar{
+    width: 32px;
+    height: 34px;
+    border-radius: 16px;
+}
+.header-navbar-user-name{
+    color: var(--text-color);
+    width: 146px;
+    position: relative;
+    left: 8px;
+    top: 8px;
+    font-size: 5px;
+    min-width: 88px;
+}
+.header-navbar-user-icon{
+    color: #fff;
+    position: absolute;
+    top: 3px;
+    left: 300px;
+    font-size: 1.2rem;
+    height: 20px;
+    width: 14px;
+}
+.header-navbar-user-menu{
+    position: relative;
+    right: 175px;
+    top: 20px;
+    width: 196px;
+    height: 160px;
+    padding-left: 0;
+    margin: 0 0;
+    background-color: #282828;
+    list-style: none;
+    border-radius: 5px;
+    display: none;
+}
+.header-navbar-user-setting:hover .header-navbar-user-menu{
+    display: block;
+}
+.header-navbar-user-item:first-child{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.header-navbar-user-item:last-child{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.header-navbar-user-item{
+    width: 195px;
+    height: 40px;
+}
+.header-navbar-user-item:hover{
+    background-color: #aaa;
+}
+.header-navbar-user-link{
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 92%;
+    height: 100%;
+    position: relative;
+    left: 10px;
+}
+/*End User*/
+/*End Navbar*/
+
+
+
+/*Begin container*/
+.container{
+    position: absolute;
+    top: 60px;
+    left: 224px;
+    width: 1119px;
+    height: 7500px;
+    background-color: #121212;
+    overflow: hidden;
+}
+.container-headding-day{
+    position: relative;
+    left: 50px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+.container-playlist{
+    display: flex;
+    justify-content: space-around;
+}
+.container-playlist:last-child{
+    padding-top: 20px;
+}
+.container-playlist-theme{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 336px;
+    height: 80px;
+    background-color: black;
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none;
+}
+.container-playlist-theme-img{
+    width: 90px;
+    height: 80px;
+}
+.container-playlist-theme-description{
+    color: var(--text-color);
+    font-size: 1.2rem;
+    position: relative;
+    right: 34px;
+}
+.container-playlist-theme-icon{
+    color: green;
+    width: 44px;
+    height: 42px;
+    font-size: 2.4rem;
+}
+/*Container channel*/
+.container-channel{
+
+}
+.container-headding-name{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 1050px;
+    padding-top: 40px;
+}
+.container-headding-link{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 2.2rem;
+    font-weight: 900;
+    position: relative;
+    left: 50px;
+}
+.container-channel-headder-description{
+    position: relative;
+    left: 52px;
+    color: #767676;
+}
+.container-headding-link--show-all{
+    color: #b3b3b3;
+    font-size: 1.2rem;
+}
+.container-channel-menu{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 32px;
+}
+.container-channel-menu-play{
+    width: 190px;
+    height: 270px;
+    background-color: #181818;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--text-color);
+}
+.container-channel-menu-play-img{
+    position: relative;
+    top: 12px;
+    left: 20px;
+    border-radius: 4px;
+}
+.container-channel-menu-play-content{
+    position: relative;
+    left: 20px;
+}
+.container-channel-menu-play-content-description{
+    font-size: 1.1rem;
+}
+.container-channel-menu-play-player{
+    position: relative;
+    bottom: 20px;
+    color: #6f6f6f;
+}
+.container-channel-headder{
+    position: relative;
+    top: 24px;
+}
+/*End container*/
+/*Begin Footer*/
+.footer{
+    top: 520px;
+    height: 128px;
+    width: 100%;
+    background-color: #181818;
+    position: fixed;
+}
+/*End Footer*/

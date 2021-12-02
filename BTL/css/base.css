@@ -1,0 +1,20 @@
+:root{
+    --text-color:#ffffff;
+    --sidebar-color:#000000;
+    --header-color:#212121;
+    --content-color:#121212;
+    --description-color:#a9a9a9;
+    --icon-color:#757575;
+}
+html{
+    height: 1800px;
+    font-family: 'Roboto', sans-serif;
+}
+.btn{
+    border-radius: 16px;
+    background-color: #09051a;
+    color: #fff;
+    height: 34px;
+    border: 1px solid #fff;
+    cursor: pointer;
+}
