@@ -66,7 +66,7 @@
 }
 .header-sidebar-item-option-download{
     position: relative;
-    top: 180px;
+    top: 138px;
 }
 .header-sidebar-item-active{
     background-color: #282828;
@@ -242,9 +242,6 @@
     font-size: 2.4rem;
 }
 /*Container channel*/
-.container-channel{
-
-}
 .container-headding-name{
     display: flex;
     justify-content: space-between;
@@ -307,10 +304,225 @@
 /*End container*/
 /*Begin Footer*/
 .footer{
-    top: 520px;
-    height: 128px;
+    bottom: 0px;
+    height: 145px;
     width: 100%;
-    background-color: #181818;
+    background-color: rgb(24, 24, 24);
     position: fixed;
+    z-index: 1;
+    display: flex;
+    /* justify-content: space-around; */
 }
+.footer-song-are-playing{
+    display: flex;
+}
+/*footer playing*/
+.footer-playing{
+    width: 150px;
+    position: relative;
+    left: 25px;
+    height: 130px;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-playing:hover{
+    border-radius: 5px;
+    background-color: #6f6f6f;
+}
+.footer-theme{
+    padding-left: 30px;
+    position: relative;
+    top: 22px;
+    text-decoration: none;
+}
+.footer-theme-img{
+    width: 75px;
+    height: 75px;
+    border-radius: 40px;
+    position: relative;
+    bottom: 15px;
+}
+.footer-playing-btn{
+    border-radius: 45px;
+    height: 33px;
+    position: relative;
+    bottom: 44px;
+    left: 2px;
+    background-color: #020304;
+    border: 1px solid #020304;
+    cursor: pointer;
+}
+.footer-playing-icon{
+    font-size: 1.2rem;
+    color: #6f6f6f;
+}
+/*end footer playing*/
+
+
+/*begin footer song playing*/
+.footer-song-playing{
+    position: relative;
+    top: 56px;
+    left: 40px;
+    font-size: 18px;
+}
+.footer-song{
+    text-decoration: none;
+    color: var(--text-color);
+}
+.footer-song-singer{
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 14px;
+}
+.footer-song:hover,
+.footer-song-singer:hover{
+    text-decoration: underline;
+}
+/*end footer song playing*/
+
+
+/*begin footer action*/
+.footer-action{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    left: 40px;
+    font-size: 20px;
+}
+.footer-action-btn{
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+.footer-action-like{
+    color: #4d4d4d;
+}
+.footer-action-screen{
+    color: #b3b3b3;
+}
+
+/*end footer action*/
+/*Begin footer time line progress*/
+.footer-timeline{
+    color: red;
+    position: relative;
+    left: 45px;
+    width: 530px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.footer-timeline-realtime{
+   
+}
+.footer-timeline-progress{
+
+}
+.footer-timeline-control-icon{
+
+}
+.footer-timeline-btn{
+    color: #bbb;
+    font-size: 1.2rem;
+    position: relative;
+    bottom: 35px;
+    left: 140px;
+}
+.footer-action-btn-playing{
+    font-size: 2.2rem;
+}
+.footer-timeline-progress{
+    border: 2px solid yellow;
+    position: relative;
+    bottom: 15px;
+    left: 5px;
+    border-radius: 5px;
+    width: 500px;
+}
+.footer-timeline-duration{
+    position: relative;
+    left: 8px;
+}
+/*end footer time line progress*/
+/*Begin footer song controller*/
+.footer-song-controller{
+    position: relative;
+    left: 150px;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-around;
+    width: 253px;
+    height: 100%;
+}
+.footer-song-controller-btn{
+    color: #fff;
+}
+.footer-song-controller-volume{
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+.footer-song-controller-volume-progress{
+    border: 2px solid green;
+    width: 90px;
+    height: 1px;
+}
+/*End footer song controller*/
+/*Begin footer connection*/
+.footer-connection{
+    width: 280px;
+    height: 410px;
+    background-color: #282828;
+    position: absolute;
+    right: 20px;
+    bottom: 100px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+.footer-connection-headder-help{
+    position: absolute;
+    bottom: 470px;
+    right: 25px;
+    border-radius: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    cursor: pointer;
+    color: #bbb;
+}
+.footer-connection-img{
+    position: absolute;
+    bottom: 280px;
+    right: 88px;
+    width: 278px;
+    border: 1px solid transparent;
+}
+.footer-connection-headder-description{
+    color: #fff;
+    position: absolute;
+    bottom: 185px;
+    right: 100px;
+    font-size: 17px;
+}
+.footer-connection-btn{
+    position: absolute;
+    background-color: green;
+    color: #fff;
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    right: 130px;
+    font-size: 1.2rem;
+    top: -20px;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+.footer-connection-wrap{
+    background-color: red;
+}
+/*End footer connection*/
 /*End Footer*/
